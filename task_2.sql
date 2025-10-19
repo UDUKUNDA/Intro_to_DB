@@ -6,12 +6,12 @@ CREATE TABLE IF NOT EXISTS Authors (
   PRIMARY KEY (author_id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS `customers` (
-  `customer_id` INT AUTO_INCREMENT,
-  `customer_name` VARCHAR(215) NOT NULL,
-  `email` VARCHAR(215) NOT NULL,
-  `address` TEXT,
-  PRIMARY KEY (`customer_id`)
+CREATE TABLE IF NOT EXISTS Customers (
+  customer_id INT AUTO_INCREMENT,
+  customer_name VARCHAR(215) NOT NULL,
+  email VARCHAR(215) NOT NULL,
+  address TEXT,
+  PRIMARY KEY (customer_id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS Books (
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `customer_id` INT NOT NULL,
   `order_date` DATE NOT NULL,
   PRIMARY KEY (`order_id`),
-  FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`)
+  FOREIGN KEY (customer_id) REFERENCES Customers (customer_id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS `order_details` (
