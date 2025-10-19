@@ -36,7 +36,7 @@ def create_database(db_name: str) -> None:
         cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print(f"Database '{db_name}' created successfully!")
 
-    except Error as err:
+    except mysql.connector.Error as err:
         print(f"Error connecting to the DB: {err}")
     except Exception as ex:
         print(f"Unexpected error: {ex}")
