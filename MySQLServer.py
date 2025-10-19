@@ -33,7 +33,7 @@ def create_database(db_name: str) -> None:
 
         cursor = conn.cursor()
         # Create database without using SELECT/SHOW
-        cursor.execute(f"CREATE DATABASE IF NOT EXISTS `{db_name}`")
+        cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print(f"Database '{db_name}' created successfully!")
 
     except Error as err:
