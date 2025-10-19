@@ -15,7 +15,7 @@ CREATE TABLE customers (
   PRIMARY KEY (customer_id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE books (
+CREATE TABLE Books (
   book_id INT AUTO_INCREMENT,
   title VARCHAR(130) NOT NULL,
   author_id INT NOT NULL,
@@ -40,5 +40,5 @@ CREATE TABLE order_details (
   quantity DOUBLE NOT NULL,
   PRIMARY KEY (order_detail_id),
   FOREIGN KEY (order_id) REFERENCES orders (order_id),
-  FOREIGN KEY (book_id) REFERENCES books (book_id)
+  FOREIGN KEY (book_id) REFERENCES Books (book_id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
